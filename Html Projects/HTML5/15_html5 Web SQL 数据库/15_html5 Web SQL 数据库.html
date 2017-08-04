@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>15 html5 Web SQL 数据库</title>
+</head>
+<body>
+	<h4>HTML5 Web SQL 数据库 核心方法：</h4>
+	<ul>
+		<li>openDatabase: 这个方法使用现有的数据库或者新建的数据库创建一个数据库对象</li>
+		<li>transaction: 这个方法让我们能够控制一个事务，以及基于这种情况执行提交或者回滚</li>
+		<li>executeSql: 这个方法用于执行实际的SQL查询</li>
+	</ul>
+
+	<h4>打开数据库 openDatabase</h4>
+	openDatabase() 打开已经存在的数据库，如果不存在的话，会新建一个数据库
+	
+	<div id="status" name="status">状态信息</div>
+	
+
+	<script type="text/javascript">   
+		// 对应的参数分别为：数据库名称，版本号，描述文本，数据库大小，创建回调(创建回调会在创建数据库后被调用)   
+         var db = openDatabase('mydb', '1.0', 'TestDB', 2 * 1024 * 1024);
+         var msg;
+         
+         db.transaction(function (tx) {
+            tx.executeSql('CREATE TABLE IF NOT EXISTS LOGS (id unique, log)');
+            tx.executeSql('INSERT INTO LOGS (id, log) VALUES (1, "菜鸟教程")');
+            tx.executeSql('INSERT INTO LOGS (id, log) VALUES (2, "www.runoob.com")');
+            msg = '<p>数据表已创建，且插入了两条数据。</p>';
+            document.querySelector('#status').innerHTML =  msg;
+         });
+
+         db.transaction(function (tx) {
+              tx.executeSql('DELETE FROM LOGS  WHERE id=1');
+              msg = '<p>删除 id 为 1 的记录。</p>';
+              document.querySelector('#status').innerHTML =  msg;
+         });
+
+         db.transaction(function (tx) {
+             tx.executeSql('UPDATE LOGS SET log=\'runoob.com\' WHERE id=2');
+              msg = '<p>更新 id 为 2 的记录。</p>';
+              document.querySelector('#status').innerHTML =  msg;
+         });
+
+         db.transaction(function (tx) {
+            tx.executeSql('SELECT * FROM LOGS', [], function (tx, results) {
+               var len = results.rows.length, i;
+               msg = "<p>查询记录条数: " + len + "</p>";
+               document.querySelector('#status').innerHTML +=  msg;
+               
+               for (i = 0; i < len; i++){
+                  msg = "<p><b>" + results.rows.item(i).log + "</b></p>";
+                  document.querySelector('#status').innerHTML +=  msg;
+               }
+            }, null);
+         });
+         
+      </script>
+
+
+
+	
+	
+</body>
+</html>

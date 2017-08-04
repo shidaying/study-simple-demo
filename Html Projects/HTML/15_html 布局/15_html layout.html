@@ -1,0 +1,42 @@
+<!-- 
+	HTML 布局 - 使用表格
+	使用 HTML <table> 标签是创建布局的一种简单的方式。
+	大多数站点可以使用 <div> 或者 <table> 元素来创建多列。CSS 用于对元素进行定位，或者为页面创建背景以及色彩丰富的外观。
+ -->
+
+ <!-- 
+	HTML 布局 - 使用<div> 元素
+	div 元素是用于分组 HTML 元素的块级元素。
+	下面的例子使用五个 div 元素来创建多列布局：
+  -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>15 html layout</title>
+</head>
+<body>
+	<img src="layout_tags.png">
+
+	<div id="container" style="width: 90%; margin: 0 auto;">
+		<div id="header" style="background-color: #ffa500">
+			<h1 style="margin-bottom: 0">主要的网页标题</h1>
+		</div>
+		<div id="menu" style="background-color: #ffd700; width: 20%; height: 200px; float: left;">
+			<b>菜单</b>
+			<br>
+			HTML
+			<br>
+			CSS
+			<br>
+			JavaScript
+		</div>
+		<div id="content" style="background-color: #eeeeee; width: 80%; height: 200px; float: left;">
+			内容在这里
+		</div>
+		<div id="footer" style="background-color: #ffa500; clear: both; text-align: center;">
+			版权 © runoob.com
+		</div>
+	</div>
+</body>
+</html>

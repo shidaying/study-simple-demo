@@ -1,0 +1,76 @@
+
+ <!-- 
+	CSS 是在 HTML 4 开始使用的,是为了更好的渲染HTML元素而引入的.
+	CSS 可以通过以下方式添加到HTML中:
+	内联样式- 在HTML元素中使用"style" 属性
+	内部样式表 -在HTML文档头部 <head> 区域使用<style> 元素 来包含CSS
+	外部引用 - 使用外部 CSS 文件
+
+	最好的方式是通过外部引用CSS文件.
+
+	当特殊的样式需要应用到个别元素时，就可以使用内联样式。 使用内联样式的方法是在相关的标签中使用样式属性。样式属性可以包含任何 CSS属性。以下实例显示出如何改变段落的颜色和左外边距。
+  -->
+
+ <!-- 
+ 							内联样式
+	当特殊的样式需要应用到个别元素时，就可以使用内联样式。 使用内联样式的方法是在相关的标签中使用样式属性。样式属性可以包含任何 CSS 属性。以下实例显示出如何改变段落的颜色和左外边距
+
+	<p style="color:blue;margin-left:20px;">This is a paragraph.</p>
+  -->
+
+<!-- 
+						外部样式
+	当样式需要被应用到很多页面的时候，外部样式表将是理想的选择。使用外部样式表，你就可以通过更改一个文件来改变整个站点的外观。
+
+	<head>
+		<link rel="stylesheet" type="text/css" href="mystyle.css">
+	</head>
+ -->
+ 
+ <!-- 
+					文本对其方式
+	使用 text-align（文字对齐）属性指定文本的水平与垂直对齐方式：
+
+	属性名						值						说明
+	text-align			left				把文本排列到左边。默认值：由浏览器决定
+									right				把文本排列到右边
+									center			把文本排列到中间
+									justify			实现两端对齐文本效果
+									inherit						规定应该从父元素继承 text-align 属性的值
+															
+  -->
+	  
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>10 html css</title>
+	<style type="text/css">
+		h1 {
+			color: red;
+		}
+		p {
+			color: blue;
+		}
+	</style>
+
+	
+</head>
+<body style="background-color: yellow">
+	<h1>这是一个标题</h1>
+	<p>这是一个段落</p>
+	<a href="http://www.baidu.com" style="text-decoration: none">这是一个没有下划线的链接</a>
+
+	<h2 style="font-family: verdana;">二级标题</h2>
+	<p style="font: arial; color: gray; font-size: 20px;">这又是另外一个段落</p>
+	<p style="background: #4be3bf">大家都爱学习</p>
+
+	<br>
+	<p style="text-align: center;">text_align可能的取值</p>
+	<img src="text_align.png" alt="图片显示不出来时候的文字" width="817" height="242">
+
+	<br>
+	<img src="html_style_tag.png" width="736" height="">
+	
+</body>
+</html>

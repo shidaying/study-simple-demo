@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>13 html5 语义元素</title>
+</head>
+<body>
+	<h4>什么是语义元素？</h4>
+	<strong>无语义</strong>元素实例：&lt;div&gt; 和 &lt;span&gt; - 无需考虑内容
+	<strong>语义</strong>元素实例: &lt;form&gt;, &lt;table&gt;, &lt;img&gt; 清楚的定义了他的内容 
+
+	<h4>html5 中新的语义元素</h4>
+	html5 中提供了新的语义元素来明确一个Web页面的不同部分:
+	<ul>
+		<li>header</li>
+		<li>nav</li>
+		<li>section</li>
+		<li>article</li>
+		<li>aside</li>
+		<li>figcaption</li>
+		<li>figure</li>
+		<li>footer</li>
+	</ul>
+	
+	<img src="img_sem_elements.gif" width="219" height="258">
+
+	<h4>section 元素</h4>
+	&lt;section&gt; 标签定义文档中的节(section, 区段).比如章节，页眉，页脚或文档中的其他部分. <br>
+	<br>根据W3C HTML5文档: section 包含了一组内容及其标题。
+	<section>
+		<h5>WWF</h5>
+		<p>The World Wide Fund for Nature (WWF) is </p>
+	</section>
+
+	<h4>article 元素</h4>
+	&lt;article&gt; 定义独立的内容。 <br>
+	&lt;article&gt; 元素使用实例
+	<ul>
+		<li>Forum post</li>
+		<li>Blog post</li>
+		<li>News story</li>
+		<li>Comment</li>
+	</ul>
+
+	<article>
+		<h5>Internet Explorer</h5>
+		<p>Windows Internet Explorer 9 （缩写为 IE9）在2011年3月14日21：00发布</p>
+	</article>
+
+	<h4>nav 元素</h4>
+	&lt; nav &gt;标签定义导航链接的部分。 <br>
+	&lt; nav &gt; 元素用于定义页面导航链接部分区域，但是不是所有的链接都需要包含在 nav 元素中！ <br>
+	<nav>
+		<a href="http://www.runoob.com/html/html-tutorial.html"></a>
+		<a href="http://www.runoob.com/css/css-tutorial.html"></a>
+		<a href="http://www.runoob.com/js/js-tutorial.html"></a>
+		<a href="http://www.runoob.com/jquery/jquery-tutorial.html"></a>
+	</nav>
+
+	<h4> header 元素</h4>
+	&lt; header &gt; 元素描述了文档的头部区域。 <br>
+	&lt; header &gt; 元素注意用于定义内容的介绍展示区域。 <br>
+	在页面中你可以使用多个 &lt; header &gt; 元素
+	<article>
+		<header>
+			<h5> Internet Explorer 9</h5>
+			<p><time pubdate datetime="2011-03-15"></time></p>
+		</header>
+		<p>Windows Internet Explorer 9 (缩写为 IE9）在2011年3月14日21：00发布的</p>
+	</article>
+
+	<h4> footer 元素</h4>
+	&lt; footer 元素 &gt; 元素描述了文档的底部区域。 <br>
+	&lt; footer 元素 &gt; 元素应该包含他的包含元素。一个页脚通常包含文档的作者，著作权信息，链接得使用条款，联系信息等。 <br>
+	文档中你可以使用多个 &lt;footer&gt; 元素 <br>
+
+	<footer>
+		<p>Posted by: Hege Refsnes</p>
+		<p><time pubdate datetime="2012-03-01"></time></p>
+	</footer>
+
+	<h4>figure 和 figcaption 元素</h4>
+	&lt; figure &gt; 标签规定独立的流内容 (图像，图表，照片，代码等等) <br>
+	&lt; figure &gt; 元素的内容应该与主内容相关，但如果被删除，则不应对文档流产生影响
+	<br><br>
+	&lt; figcaption &gt; 标签定义 &lt; figure &gt; 元素的标题 <br>
+	&lt; figcaption &gt; 元素应该被置于 "figure" 元素的第一个或最后一个子元素的位置
+	
+	<figure>
+		<img src="http://www.runoob.com/try/demo_source/img_pulpit.jpg" alt="The Pulpit Rock" width="304" height="228">
+		<figcaption>Fig1. - The Pulpit Pock, Norway</figcaption>
+	</figure>
+
+	<h4>使用这些元素注意事项</h4>
+	以上的元素除了 figcaption 其余的都是块元素. <br>
+	为了让这些元素块元素在所有的版本的浏览器生效，需要要样式表中设置属性
+
+	<pre>
+		header, section, footer, aside, nav, artical, figure
+		{
+			display: block;
+		}
+	</pre>
+	
+	<h5>Internet Explorer 8 及更早IE版本中的问题</h5>
+	IE8 及更早IE版本无法在这些元素中渲染CSS效果，以至于你不能使用 &lt;header&gt;, &lt;section&gt;, &lt;footer&gt;, &lt;aside&gt;, &lt;nav&gt;, &lt;article&gt;, &lt;figure&gt;, 或者其他的HTML5 elements. <br>
+		
+	解决办法：你可以使用HTML5 Shiv Javascript脚本来解决IE的兼容问题。下载地址<a href="http://cdn.static.runoob.com/libs/html5shiv/3.7/html5shiv.min.js">http://cdn.static.runoob.com/libs/html5shiv/3.7/html5shiv.min.js</a>
+	下面的代码必须加在 head 区域
+
+	
+		<!--[if lt IE 9]>
+			<script src="html5shiv.js"></script>
+		<![endif]-->
+	
+
+</body>
+</html>

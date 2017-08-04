@@ -1,0 +1,26 @@
+<!-- 
+	一些旧的浏览器不支持 iframe。
+	如果浏览器不支持 iframes 则不会显示。
+
+	通过使用框架，你可以在同一个浏览器窗口中显示不止一个页面。
+	iframe语法:
+		<iframe src="URL"></iframe>
+	
+	iframe可以显示一个目标链接的页面, 目标链接的属性必须使用iframe的属性
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>17 html 框架</title>
+</head>
+<body>
+	<img src="frame.png" width="350" height="101">
+	<br>
+
+	<iframe src="http://www.baidu.com" width="500" height="200" frameborder="0" scrolling="yes"></iframe>
+
+	<h3>iframe可以显示一个目标链接的页面, 目标链接的属性必须使用iframe的属性</h3>
+	<iframe src="http://www.baidu.com" name="iframe_a"></iframe>
+	<p><a href="http://www.runoob.com" target="iframe_a">RUNOOB.COM</a></p>
+</body>
+</html>

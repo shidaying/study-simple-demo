@@ -1,0 +1,74 @@
+<!-- 
+	colspan 列合并
+	rowspan	行合并
+	二者均可修饰 th, td 但是不能修饰 tr
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>跨行、跨列的表格单元格</title>
+</head>
+<body>
+	
+	<table border="1">
+		<caption>单元格跨两行</caption>
+		<tr>
+			<th>Name</th>
+			<th colspan="2">电话号</th>
+		</tr>
+
+		<tr>
+			<td>时礼欢</td>
+			<td>15221662090</td>
+			<td>18501359754</td>
+		</tr>
+	</table>
+	
+	<table border="1">
+		<caption>单元格跨两列</caption>
+		<tr>
+			<th>first name</th>
+			<td>时礼欢</td>
+		</tr>
+		<tr>
+			<th rowspan="2">telephone</th>
+			<td>15221662090</td>
+			<!-- <td>555 77 855</td> -->
+		</tr>
+		<tr>
+			<td>18501359754</td>
+		</tr>
+	</table>
+
+	<table border="1">
+		<caption>自己的小测试</caption>
+
+		<tr>
+			<!-- 第一行第一列占2行 -->
+			<td rowspan="2">第一行第一列</td>
+			<td>第一行第二列</td>
+			<td>第一行第三列</td>
+			<td>第一行第四列</td>
+			<td>第一行第五列</td>
+		</tr>
+
+		<tr>
+			<td>第二行第一列</td>
+			<td>第二行第二列</td>
+			<td>第二行第三列</td>
+			<td>第二行第四列</td>
+			<td>第二行第五列</td>
+		</tr>
+
+		<tr>
+			<td>第三行第一列</td>
+			<td>第三行第二列</td>
+			<td>第三行第三列</td>
+			<td>第三行第四列</td>
+			<td colspan="2">第三行第五列</td>
+		</tr>
+	</table>
+
+</body>
+</html>

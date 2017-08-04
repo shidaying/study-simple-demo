@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>表格内的标签</title>
+</head>
+<body>
+	<table border="1">
+		<caption>单元格内含有别的标签</caption>
+		<tr>
+			<td><p>我是第一个段落</p></td>
+			<td><p>我是第二个段落</p></td>
+		</tr>
+	
+		<tr>
+			<td><h2>我是第三个段落</h2></td>
+			<td><a href="http://www.baidu.com" style="text-decoration:none;">百度一下,你就知道</a></td>
+		</tr>
+		<tr>
+			<td><img src="test.png" width="94" height="33"></td>
+		</tr>
+	</table>
+	
+	<table border="1">
+		<caption>单元格内有表格</caption>
+		<tr>
+			<td>我是第一行第一列</td>
+			<td>
+				<table border="1">
+					<caption>我是小表格</caption>
+					<tr>
+						<td>我是里面表格的第一行第一列</td>
+						<td>我是里面表格的第一行第二列</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				这个单元格内有一个列表
+				<ul>
+					<li>apple</li>
+					<li>banana</li>
+					<li>pineapples</li>
+				</ul>
+			</td>
+			<td>hello</td>
+		</tr>
+
+	</table>
+
+</body>
+</html>

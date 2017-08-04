@@ -1,0 +1,98 @@
+<!-- 
+	HTML使用标签 <a>来设置超文本链接。
+	超链接可以是一个字，一个词，或者一组词，也可以是一幅图像，您可以点击这些内容来跳转到新的文档或者当前文档中的某个部分
+
+	HTML 链接- id 属性
+	id属性可用于创建在一个HTML文档书签标记。
+	提示: 书签是不以任何特殊的方式显示，在HTML文档中是不显示的，所以对于读者来说是隐藏的。
+ -->
+
+ 
+<!-- 
+	属性				值				说明
+	target			_blank			新窗口中打开
+					_self			默认。在相同的框架中打开
+					_parent			在父框架集中打开。
+					_top			在整个窗口中打开。
+					_framename		在指定的框架中打开。
+
+	id				自定义			文档书签标记
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>08 html 超链接</title>
+</head>
+<body>
+
+<!-- target 属性值 -->
+	<img src="target_value.png" width="825" height="242">
+	<br>
+	<a href="test.html">本地链接</a>测试
+	<br>
+	<a href="http://www.baidu.com">远程链接</a>测试
+
+	<br>
+	<a href="http://www.baidu.com" target="_blank">新窗口中打开</a>
+	
+	<br>
+	<a href="http://www.baidu.com" target="_self">默认。在相同的框架中打开</a>
+
+	<br>
+	<a href="http://www.baidu.com" target="_parent">在父框架集中打开。</a>
+
+	<br>
+	<a href="http://www.baidu.com" target="_top">在整个窗口中打开。</a>
+
+	<br>
+	<a href="http://www.baidu.com" target="_framename">在指定的框架中打开</a>
+
+<!-- 打开电子邮件 -->
+	<br>
+	<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top">发送邮件</a>
+
+<!-- 图片链接 -->
+	<br>
+	<a href="http://www.baidu.com" target="_blank"><img src="pic_link.png" width="130" height="104" border="10"></a>
+
+<!-- id 标签 做页面内跳转很有用 -->
+	<br>
+	<a id="tips">有用的提示部分</a>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<a href="#tips">访问有用的提示部分</a>
+	<br>
+	<a href="http://www.runoob.com/html/html-links.html#tips">从另一个页面创建一个链接到"有用的提示部分(id="tips"）"</a>
+	
+
+	<br>
+
+<!-- 页面内跳转 -->
+	<a href="#c4">跳转到第四章节</a>
+
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+	<h3>第一章节</h3>
+	<p>第一章节的内容</p>
+
+	<h3>第二章节</h3>
+	<p>第二章节的内容</p>
+
+	<h3>第三章节</h3>
+	<p>第三章节的内容</p>
+
+	<h3><a id="c4"></a>第四章节</h3>
+	<p>第四章节的内容</p>
+
+	<h3>第五章节</h3>
+	<p>第五章节的内容</p>
+
+	<h3>第六章节</h3>
+	<p>第六章节的内容</p>
+
+	<h3>第七章节</h3>
+	<p>第七章节的内容</p>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!-- 
+ 	Internet Explorer 8 或者更早的IE版本不支持 <video> 元素
+
+
+ 	<video> 元素元素也提供了 width 和 height 属性控制视频的尺寸.如果设置的高度和宽度，所需的视频空间会在页面加载时保留。。如果没有设置这些属性，浏览器不知道大小的视频，浏览器就不能再加载时保留特定的空间，页面就会根据原始视频的大小而改变
+  -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>09 htlml5 video</title>
+</head>
+<body>
+	<video width="320" height="240" controls>
+		<source src="https://www.runoob.com/try/demo_source/movie.mp4" type="video/mp4">
+		<source src="https://www.runoob.com/try/demo_source/movie.ogg" type="video/ogg">
+		您的浏览器不知 HTML5 video 标签
+	</video>
+	<p><strong>注意:<br></strong>1.&lt;video&gt; 与&lt;/video&lt; 标签之间插入的内容是提供给不支持 video 元素的浏览器显示的<br>2.&lt;video&gt;元素支持多个 &lt;source&gt; 元素. &lt;source&gt;元素可以链接不同的视频文件。浏览器将使用第一个可识别的格式：</p>
+
+	<h4>视频格式与浏览器支持</h4>
+	<img src="browser.png" width="549" height="358">
+	<img src="format.png" width="549" height="186">
+	
+	
+	<p>&lt;video&gt; 和 &lt;audio&gt;元素的方法、属性和事件可以使用JavaScript进行控制.
+	<br>其中的方法有用于播放、暂停以及加载等。其中的属性（比如时长、音量等）可以被读取或设置。
+	其中的 DOM 事件能够通知您，比方说，&lt;video&gt; 元素开始播放、已暂停，已停止</p>
+		
+	<h4>HTML5 Video 标签</h4>
+	<img src="video_tags.png" width="479" height="194">
+	
+	<div style="text-align: center;">
+		<button onclick="playPause()">播放/暂停</button>
+		<button onclick="makeBig()">放大</button>
+		<button onclick="makeSmall()">缩小</button>
+		<button onclick="makeNormal()">正常</button>
+		<br>
+		<video id="myVideo" width="420">
+			<source src="https://www.runoob.com/try/demo_source/mov_bbb.mp4" type="video/mp4">
+			<source src="https://www.runoob.com/try/demo_source/mov_bbb.ogg" type="video/ogg">
+			您的浏览器不支持 htlml5 video 标签
+		</video>
+	</div>
+	<script >
+		var myVideo=document.getElementById("myVideo");
+		function playPause() {
+			if (myVideo.paused) {
+				myVideo.play();
+			} else {
+				myVideo.pause();
+			}
+		}
+		function makeBig() {
+			myVideo.width = 560;
+		}
+		function makeSmall() {
+			myVideo.width = 320;
+		}
+		function makeNormal() {
+			myVideo.width = 420;
+		}
+	</script>
+</body>
+</html>

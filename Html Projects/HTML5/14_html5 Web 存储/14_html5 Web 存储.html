@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>14 html5 web 存储</title>
+</head>
+<body>
+	<h4>localStorage 和 sessionStorage</h4>
+	<ul>
+		<li>localStorage - 没有时间限制的数据存储</li>
+		<li>sessionStorage - 针对一个 session数据存储</li>
+	</ul>
+	在使用 Web存储前，应检查浏览器是否支持 localStorage 和 sessionStorage
+
+	<pre>
+		if (typeof(Storage) !== "undefined") { 
+			// 支持
+		} else {
+			// 不支持
+		}
+	</pre>
+	
+	<br>
+
+	<div id="result"> 我的爱情</div>
+
+	
+	<h4>localStorage、sessionStorage常用的api </h4>
+	<ul>
+		<li>保存数据： localStorage.setItem(key, value)</li>
+		<li>读取数据： localStorage.getItem(key)</li>
+		<li>删除单个数据： localStorage.removeItem(key)</li>
+		<li>删除所有数据: localStorage.clear()</li>
+		<li>得到某个索引的key: localStorage.key(index)</li>
+	</ul>
+	<strong>提示：</strong>键/值通常以字符串存储，可以按自己的需要转换该格式
+	
+	<div id="clickCounter">点击按钮次数: localStorage.clickCounter</div>
+	<p><button onclick="clickCounter()">计数</button></p>
+	<p>关闭浏览器选项卡(或窗口)， 重新打开此页面，计数器将继续计数，而不是重置</p>
+
+	<h4>sessionStorage 对象</h4>
+	sessionStorage 方法针对 session进行数据存储，当用户关闭浏览器窗口后，数据会被删除
+
+
+
+	<script type="text/javascript">
+		if (typeof(Storage) !== "undefined") {
+			localStorage.sitename = "菜鸟教程";
+			document.getElementById("result").innerHTML = "网站名: " + localStorage.sitename;
+		} else {
+			document.getElementById("result").innerHTML = "对不起，您的网站不支持 web 存储。";
+		}
+	</script>
+
+	<script type="text/javascript">
+		function clickCounter() {
+			if (typeof(Storage) !== "undefined") {
+				if (localStorage.clickCounter) {
+					localStorage.clickCounter = Number(localStorage.clickCounter) + 1;
+				} else {
+					localStorage.clickCounter = 1;
+				}
+				document.getElementById("clickCounter").innerHTML = "你已经点击了按钮" + localStorage.clickCounter + "次";
+			} else {
+				document.getElementById("clickCounter").innerHTML = "对不起，您的网站不支持 web 存储";
+			}
+		}
+
+		
+
+	</script>
+
+	<script type="text/javascript">
+		
+	</script>
+</body>
+</html>

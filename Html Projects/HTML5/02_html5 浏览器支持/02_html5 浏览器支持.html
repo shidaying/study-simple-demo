@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>html5 浏览器支持</title>
+	<!--[if lt IE 9]>
+  <script src="http://cdn.static.runoob.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+  
+  <![endif]-->
+	<script type="text/javascript">
+		document.createElement("myHero")
+	</script>
+	<style type="text/css">
+		myHero {
+			display: block;
+			background-color: #ddd;
+			padding: 50px;
+			font-size: 30px;
+		}
+	</style>
+</head>
+<body>
+	<p>HTML5 定了 8 个新的 HTML 语义（semantic） 元素。所有这些元素都是 块级 元素。</p>
+	<p>为了能让旧版本的浏览器正确显示这些元素，你可以设置 CSS 的 display 属性值为 block:</p>
+	<p>header, section, footer, aside, nav, main, article, figure {
+    	display: block; }</p>
+	
+	<h3>为HTML添加新元素</h3>
+	<myHero>自定义的元素</myHero>
+	可以使用以上的方法来为 IE 浏览器添加 HTML5 元素, 	Internet Explorer 8 及更早 IE 版本的浏览器不支持以上的方式。解决方法如下:在head中添加注释， 在小于IE9 的时候，读取html5.js文件
+		
+</body>
+</html>

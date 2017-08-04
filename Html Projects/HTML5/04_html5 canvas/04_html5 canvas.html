@@ -1,0 +1,112 @@
+<!-- 
+	默认情况下 <canvas> 元素没有边框和内容。
+	可以在HTML页面中使用多个 <canvas> 元素.
+	使用 style 属性来添加边框:
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>04 html5 canvas</title>
+</head>
+<body>
+	<h3>HTML5 Canvas</h3>
+	&lt;canvas&gt; 标签定义图形，比如图表和其他图像，您必须使用脚本来绘制图形。
+	<br>
+	在画布上（Canvas）画一个红色矩形，渐变矩形，彩色矩形，和一些彩色的文字。
+	<h3>什么是Canvas？</h3>
+	HTML5 &lt;canvas&gt; 元素用于图形的绘制，通过脚本 (通常是JavaScript)来完成.
+	<br>
+	&lt;canvas&gt; 标签只是图形容器，您必须使用脚本来绘制图形。
+	<br>
+	你可以通过多种方法使用Canva绘制路径,盒、圆、字符以及添加图像。
+	<br>
+
+	<img id="drawImage" src="test.png" width="119" height="71">
+	<br>
+	<canvas id="myCanvas" style="border: 1px solid #000000;" width="200" height="200">您的浏览器不支持HTML5 canvas 标签</canvas>
+
+	<!-- 画矩形 -->
+	<script type="text/javascript">
+		var doc = document.getElementById("myCanvas");
+		var ctx = doc.getContext("2d");
+		ctx.strokeStyle = "yellow";// 线条颜色
+		ctx.fillStyle = "#ff0000";
+		ctx.fillRect(0,0,50,50);// 填充
+		ctx.strokeRect(60, 0, 50, 50);
+	</script>
+	
+	<!-- 画直线 -->
+	<script type="text/javascript">
+		var doc = document.getElementById("myCanvas");
+		var ctx = doc.getContext("2d");
+		ctx.strokeStyle = "green";// 线条颜色
+		ctx.moveTo(10, 10);// 线条的起始点
+		ctx.lineTo(50, 50); // 线条的终点
+		ctx.stroke();
+	</script>
+
+	<!-- 画圆形 -->
+	<script type="text/javascript">
+		var doc = document.getElementById("myCanvas");
+		var ctx = doc.getContext("2d");
+		ctx.strokeStyle = "brown";
+		ctx.beginPath();// 这个一定要写，不然会从上次绘图结束点开始绘制
+		ctx.arc(145, 25, 25, Math.PI * 2, false);
+		ctx.stroke();
+	</script>
+
+	<!-- 绘制三角形 -->
+	<script type="text/javascript">
+		var doc = document.getElementById("myCanvas");
+		var ctx = doc.getContext("2d");
+		ctx.beginPath();
+		ctx.strokeStyle = "gray";// 线条颜色
+		ctx.fillStyle = "blue";// 填充色
+		ctx.moveTo(80, 10);// 线条的起始点
+		ctx.lineTo(80, 40); 
+		ctx.lineTo(120, 40); 
+		ctx.closePath()//闭合路径
+		ctx.fill()// 填充内部色
+		ctx.lineCap = "square"// 合法的值是 butt、round和square
+		ctx.stroke();
+	</script>
+
+	<!-- 绘制文本 -->
+	<script type="text/javascript">
+		var canvas = document.getElementById("myCanvas");
+		var context = canvas.getContext("2d");
+		context.beginPath();
+		context.strokeStyle = "red";
+		context.font = "20px Arial";
+		context.fillStyle = "green"
+		context.fillText("HelloWorld", 60, 80);
+
+		// 空心字
+		context.strokeText("我爱你", 10, 80);
+	</script>
+
+	<!-- 渐变 -->
+	<script type="text/javascript">
+		var canvas = document.getElementById("myCanvas")
+		var context = canvas.getContext("2d")
+		// 创建渐变
+		var gradient = context.createRadialGradient(75, 50, 5, 90, 60 ,100);
+		gradient.addColorStop(0, "red");
+		gradient.addColorStop(1, "white");
+		context.fillStyle = gradient;
+		context.fillRect(10, 110, 150, 30);
+	</script>
+
+	<!-- 图像 -->
+	<script type="text/javascript">
+		var canvas = document.getElementById("myCanvas");
+		var context = canvas.getContext("2d");
+		var img = document.getElementById("drawImage");
+		img.onload = function () {
+			// context.drawImage(img, 10, 150, 50, 50);// 也可以不指定新建图像大小
+			context.drawImage(img, 10, 140);
+		}
+	</script>
+</body>
+</html>

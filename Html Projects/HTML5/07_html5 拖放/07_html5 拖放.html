@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>07 html5 拖放</title>
+	<style type="text/css">
+		#div1 {
+			width: 350px;
+			height: 70px;
+			padding: 10px;
+			border: 1px solid #aaaaaa;
+		}
+		
+		#div2, #div3 {
+			float: left;
+			width: 100px;
+			height: 35px;
+			margin: 10px;
+			padding: 10px;
+			border: 1px solid #aaaaaa;
+		}
+
+	</style>
+	<script type="text/javascript">
+		function allowDrop(event) {
+			event.preventDefault();
+		}
+		function drag(event) {
+			event.dataTransfer.setData("Text", event.target.id);
+		}
+		function drop(event) {
+			event.preventDefault();
+			var data = event.dataTransfer.getData("Text");
+			event.target.appendChild(document.getElementById(data));
+		}
+	</script>
+</head>
+<body>
+	<h3>拖放</h3>
+	拖放是一种常见的特性，即抓取对象以后拖到另一个位置。
+在 HTML5 中，拖放是标准的一部分，任何元素都能够拖放。
+	<img id="drag1" src="logo.png" draggable="true" ondragstart="drag(event)" width="336" height="69">
+	
+	<br>
+	<P>将上面图片拖到矩形框中</P>
+	<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+	<h4>来回拖放图片</h4>
+	<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)">
+		<img id="drag2" src="img_w3slogo.gif" draggable="true" ondragstart="drag(event)" width="88" height="31">
+	</div>
+	<div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+</body>
+</html>

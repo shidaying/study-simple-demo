@@ -1,0 +1,50 @@
+<!-- 
+	表格由 <table> 标签来定义。每个表格均有若干行（由 <tr> 标签定义），每行被分割为若干单元格（由 <td> 标签定义）。字母 td 指表格数据（table data），即数据单元格的内容。数据单元格可以包含文本、图片、列表、段落、表单、水平线、表格等等。
+
+
+	如果不定义边框属性，表格将不显示边框。有时这很有用，但是大多数时候，我们希望显示边框。
+	使用边框属性来显示一个带有边框的表格：
+
+	表格的表头使用 <th> 标签进行定义。
+	大多数浏览器会把表头显示为粗体居中的文本：
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>12 html 表格</title>
+</head>
+<body>
+
+	<img src="table_tags.png" width="740" height="471">
+	<br>
+
+	<table border="0">
+		<!-- 添加表头 -->
+		<tr>
+			<th>FirstName</th>
+			<th>LastName</th>
+			<th>points</th>
+		</tr>
+		
+		<!-- 添加第一行 -->
+		<tr>
+			<td>row 1 cell 1</td>
+			<td>row 1 cell 2</td>
+			<td>row 1 cell 3</td>
+		</tr>
+
+		<!-- 添加第二行 -->
+		<tr>
+			<td>row 2 cell 1</td>
+			<td>row 2 cell 2</td>
+		</tr>
+
+		<!-- 添加第三行 -->
+		<tr>
+			<td>row 3 cell 1</td>
+			<td>row 3 cell 2</td>
+			<td>row 3 cell 3</td>
+		</tr>
+	</table>
+</body>
+</html>

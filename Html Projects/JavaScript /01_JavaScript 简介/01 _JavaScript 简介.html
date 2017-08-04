@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>01 JavaScript 简介</title>
+</head>
+<body>
+	<h4>写入HTML 输出</h4>
+	<script type="text/javascript">
+		document.write("<h1>This is a heading</h1>");
+		document.write("<p> This is a paragraph</p>");
+	</script>
+
+	<h4>对事件作出反应：</h4>
+	<button type="button" onclick="myFunction()">点击这里</button>
+	<script type="text/javascript">
+		function myFunction() {
+			alert('Welcom!');
+		}
+	</script>
+
+	<h4>改变HTML内容</h4>
+	<p id="demo_p">JavaScript 能改变 HTML  元素的内容</p>
+	<script type="text/javascript">
+		x = document.getElementById("demo_p");
+		x.innerHTML = "Hello JavaScript";
+	</script>
+
+	<h4>改变HTML图像</h4>
+	<p>点击灯泡就可以打开或关闭这盏灯</p>
+	<img src="pic_bulboff.gif" id="lamp" onclick="changeImage()" width="100" height="180">
+	<script type="text/javascript">
+		function changeImage() {
+			x = document.getElementById("lamp");
+			if (x.src.match("bulboff")) {
+				x.src = "pic_bulbon.gif";
+			} else {
+				x.src = "pic_bulboff.gif";
+			}
+		}		
+	</script>
+
+	<h4>改变HTML 样式</h4>
+	<p id="demo_style"> JavaScript 能改变HTML 元素的样式</p>
+	<button type="button" onclick="changeStyle()">点击这里</button>
+	<script type="text/javascript">
+		function changeStyle() {
+			element = document.getElementById("demo_style");
+			element.style.color = "#ff0000";
+		}
+	</script>
+
+	<h4>验证输入</h4>
+	javascript 常用语验证用户的输入. <br>
+	<p>请输入数字，如果输入不是数字，浏览器会弹出提示框</p>
+	<input type="text" id="demo_text" >
+	<button type="button" onclick="isValidate()">点击这里</button>
+	<script type="text/javascript">
+		function isValidate() {
+			var value = document.getElementById("demo_text").value;
+			if (value == "" || isNaN(value)) {
+				alert("输入的不是数字啊!!!");
+			}
+		}
+	</script>
+
+</body>	
+
+</html>
+

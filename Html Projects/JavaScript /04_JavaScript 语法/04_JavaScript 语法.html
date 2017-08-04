@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>04 javascript 语法</title>
+</head>
+<body>
+
+	<h2>字面量</h2>
+
+	<h4>数字字面量</h4>
+	数字字面量 可以是整数或是小数，或者是科学计数
+	<p id="number_int"></p>
+	<p id="number_float"></p>
+	<p id="number"></p>
+	<script type="text/javascript">
+		document.getElementById("number").innerHTML = 123e5;
+		document.getElementById("number_int").innerHTML = 3;
+		document.getElementById("number_float").innerHTML = 3.14;
+	</script>
+
+	<h4>字符串字面量</h4>
+	<p id="single_quote"></p>
+	<p id="double_quote"></p>
+	<script type="text/javascript">
+		document.getElementById("single_quote").innerHTML = '我爱你';
+		document.getElementById("double_quote").innerHTML = "我们都爱你";
+	</script>
+
+	<h4>表达式字面量</h4>
+	<p id="express"></p>
+	<script type="text/javascript">
+		document.getElementById("express").innerHTML = 5 * 10;
+	</script>
+
+	<h4>数组字面量</h4>
+	<p id="array"></p>
+	<script type="text/javascript">
+		document.getElementById("array").innerHTML = [40, 100, 20, 30];
+	</script></p>
+
+	<h4>对象字面量</h4>
+	<p id="dic"></p>
+	<script type="text/javascript">
+		document.getElementById("dic").innerHTML = {firstName: "John", lastName: "Doe", age: 50, eyeColor: "blue"};
+	</script>
+
+	<h4>函数字面量</h4>
+	<script type="text/javascript">
+		function multiplication (a, b) {
+			return a * b;
+		}
+	</script>
+
+
+	<h4></h4>
+
+</body>
+</html>

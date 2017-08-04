@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<img src="images/html_tags.png" width="740" height="190">
+
+	<br>
+	<img src="images/google_logo.png" width="31" height="33">
+
+	<br>
+	图像没有指定宽高的时候，图像按照图片的尺寸加载
+	<img src="images/google_logo.png">
+
+	<br>
+	图像不能正常显示的时候，可以用alt属性值显示
+	<img src="women" alt="显示不出来啊!">
+
+	<br><br><br><br><br><br>
+	下面图片和html文件在同一级目录，src属性直接写图片名称；否则要写图片路径，路径又可以分为相对路径和绝对路径。下面一二都可以理解为相对路径，第三个是绝对路径，不建议写绝对路径，项目路径改变后，绝对路径就不对了
+	<img src="test.png" width="297" height="222">
+	<br>
+	<img src="images/test.png" width="297" height="222">
+	<br>
+	<img src="/Users/a123/Desktop/Html Projects/11_html image/images/test.png" width="297" height="222">
+
+	<br>
+	加载网络图片，动图(其实和静态图没什么区别)
+	<img src="http://img3.imgtn.bdimg.com/it/u=2409907048,3191312919&fm=26&gp=0.jpg" width="200" height="200">
+	<br>
+	<img src="hackman.gif" width="24" height="24" alt="快乐的IT男">
+	
+	<br>
+	浮动图像
+	<img src="images/test.png" width="297" height="222" style="float: left;">
+	<br><br><br><br><br><br><br><br><br><br><br>
+	图像链接
+	<a href="http://www.baidu.com"><img src="test.png"></a>
+
+	<br><br>
+	创建图像映射，该段代码中的shape指的是点击区域的形状，coords指的应该是链接区域在图片中的坐标（像素为单位）
+	<p>点击太阳或其他行星，注意变化：</p>
+	<img src="https://www.runoob.com/try/demo_source/planets.gif" width="145" height="126" alt="Planets" usemap="#planetmap">
+	<map name="planetmap">
+	  <area shape="rect" coords="0,0,82,126" alt="Sun" href="https://www.runoob.com/try/demo_source/sun.htm">
+	  <area shape="circle" coords="90,58,3" alt="Mercury" href="https://www.runoob.com/try/demo_source/mercur.htm">
+	  <area shape="circle" coords="124,58,8" alt="Venus" href="https://www.runoob.com/try/demo_source/venus.htm">
+	</map>
+</body>
+</html>

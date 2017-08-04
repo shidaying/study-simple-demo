@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>03 JavaScript 输出</title>
+</head>
+<body>
+	<h4>JavaScript 显示数据</h4>
+	<ul>
+		<li>使用 window.alert()</li>
+		<li>使用 document.write() 将内容写到 HTML 文档中</li>
+		<li>使用 innerHTML 写入到 HTML 元素</li>
+		<li>使用 console.log() 写入到浏览器的控制台</li>
+	</ul>
+
+	<!-- <h4>使用 winddow.alert()</h4>
+	<script type="text/javascript">
+		window.alert(5 + 6);
+	</script> -->
+
+	<h4>操作 HTML 元素</h4>
+	<p id="first_p">我的第一个段落</p>
+	<script type="text/javascript">
+		document.getElementById("first_p").innerHTML = "段落已修改";
+	</script>
+
+
+	<h4>写到 HTML 文档</h4>
+	<script type="text/javascript">
+		document.write(Date());
+	</script>
+	
+	<br>
+	<strong>注意： </strong>请使用 document.write() 仅仅向文档输出写内容。 <br>
+	如果在文档已完成加载后执行 document.write， 整个 HTML 页面将被覆盖
+
+	<br>
+	<button onclick="btnPress()">点击这里测试</button>
+	<script type="text/javascript">
+		function btnPress() {
+			document.write(Date());
+		}
+	</script>
+
+	<h4>写到 控制台</h4>
+
+	<script type="text/javascript">
+		a = 5;
+		b = 6;
+		c = a + b;
+		console.log(c);
+	</script>
+
+</body>
+</html>
